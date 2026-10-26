@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кыргызское великодержавие — критический анализ концепции Бартольда</title>
+<style>
+:root{--bg:#0f0b0a;--card:#1b1411;--gold:#d9a441;--red:#c0392b;--text:#efe6d8;--muted:#a89a88;--line:#3a2b22}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 Georgia,"Times New Roman",serif}
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--red),var(--gold));z-index:50}
+header{min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;background:radial-gradient(ellipse at 50% 120%,#7a2a16 0,#2a1410 40%,var(--bg) 75%);position:relative;overflow:hidden}
+header:before{content:"";position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 20% 30%,#fff8 50%,transparent),radial-gradient(1px 1px at 70% 20%,#fff8 50%,transparent),radial-gradient(1.5px 1.5px at 85% 55%,#fff6 50%,transparent),radial-gradient(1px 1px at 40% 65%,#fff6 50%,transparent),radial-gradient(1px 1px at 10% 70%,#fff5 50%,transparent);animation:tw 4s infinite alternate}
+@keyframes tw{to{opacity:.35}}
+.tamga{width:90px;height:90px;margin-bottom:10px;filter:drop-shadow(0 0 14px #d9a44188);animation:fl 5s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-8px)}}
+h1{font-size:clamp(2rem,6vw,4rem);margin:.2em 0;letter-spacing:.02em;color:var(--gold);text-shadow:0 0 30px #d9a44144}
+.sub{color:var(--muted);max-width:640px;margin:0 auto 22px;font-style:italic}
+.btn{background:var(--red);color:#fff;border:0;padding:12px 26px;border-radius:30px;font:600 1rem Georgia,serif;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s}
+.btn:hover{background:var(--gold);color:#000;transform:translateY(-2px)}
+nav{position:sticky;top:0;z-index:40;background:#0f0b0ae8;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:8px}
+nav a{color:var(--muted);text-decoration:none;padding:6px 14px;border-radius:20px;font-size:.92rem}
+nav a:hover{color:var(--gold);background:var(--card)}
+section{max-width:960px;margin:0 auto;padding:60px 18px}
+h2{color:var(--gold);font-size:1.9rem;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:24px}
+h2:before{content:"◆ ";color:var(--red);font-size:.7em}
+.lead{color:var(--muted)}
+details{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:8px;margin:12px 0;transition:.2s}
+details[open]{border-left-color:var(--gold);box-shadow:0 6px 24px #0008}
+summary{cursor:pointer;padding:14px 18px;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"＋";float:right;color:var(--gold)}
+details[open] summary:after{content:"－"}
+.ans{padding:0 18px 16px;color:#dccfbc}
+.ans p{margin:.5em 0}
+.tag{display:inline-block;background:#c0392b33;color:#ffb4a8;border-radius:4px;padding:1px 8px;font-size:.78rem;margin-right:6px}
+.note{font-size:.85rem;color:var(--muted);border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}
+.prob{border-left-color:var(--gold)}
+.map{background:#150f0c;border:1px solid var(--line);border-radius:10px;padding:8px;margin-bottom:16px}
+svg text{fill:var(--text);font:13px Georgia,serif;pointer-events:none}
+.route{fill:none;stroke-width:3;stroke-linecap:round;stroke-dasharray:2 9;animation:dash 1.2s linear infinite;cursor:pointer;opacity:.75}
+.route.on{stroke-width:5;opacity:1}
+.hit{fill:none;stroke:transparent;stroke-width:22;cursor:pointer}
+@keyframes dash{to{stroke-dashoffset:-22}}
+.node{fill:var(--bg);stroke:var(--gold);stroke-width:2}
+.node.k{fill:var(--red)}
+#info{background:var(--card);border:1px solid var(--gold);border-radius:8px;padding:12px 16px;min-height:70px;font-size:.95rem}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:.9rem}
+th{background:#2a1a14;color:var(--gold);text-align:left;padding:10px}
+td{padding:10px;border-top:1px solid var(--line);vertical-align:top}
+tr.row{cursor:pointer;transition:.2s}
+tr.row:hover,tr.row.on{background:#d9a44122}
+#quiz{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.qn{color:var(--muted);font-size:.85rem}
+.pb{height:6px;background:var(--line);border-radius:3px;margin:8px 0 18px}
+.pb i{display:block;height:100%;background:var(--gold);border-radius:3px;transition:.4s}
+.opt{display:block;width:100%;text-align:left;background:#120d0b;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin:8px 0;font:inherit;cursor:pointer;transition:.15s}
+.opt:hover:not(:disabled){border-color:var(--gold);transform:translateX(4px)}
+.opt.ok{background:#1e4d2b;border-color:#3fb561}
+.opt.bad{background:#5a1a14;border-color:var(--red)}
+.exp{margin-top:12px;color:var(--muted);font-size:.92rem}
+.res{text-align:center;padding:10px}
+.res b{font-size:2.6rem;color:var(--gold);display:block}
+.rank{font-size:1.5rem;color:var(--red);margin:6px 0 14px}
+footer{text-align:center;color:var(--muted);padding:40px 16px;border-top:1px solid var(--line);font-size:.85rem}
+@media(max-width:600px){body{font-size:16px}section{padding:44px 14px}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<header>
+  <svg class="tamga" viewBox="0 0 100 100" fill="none" stroke="#d9a441" stroke-width="5" stroke-linecap="round">
+    <circle cx="50" cy="50" r="42"/><path d="M50 14v72M28 34l22 22 22-22M30 78l20-22 20 22"/>
+  </svg>
+  <p class="lead" style="letter-spacing:.3em;text-transform:uppercase;font-size:.8rem">Кыргызский авиационный институт им. И. Абдраимова</p>
+  <h1>Кыргызское великодержавие</h1>
+  <p class="sub">Тургунбаева Мундуз ВДо-1-25</p>
+</header>
+
+<nav>
+  <a href="#answers">Ответы</a><a href="#problem">Парадокс</a><a href="#trade">Торговые пути</a><a href="#test">Тест</a>
+</nav>
+
+<section id="answers">
+  <h2>Вопросы и ответы</h2>
+  <p class="lead">Нажимай на вопрос, чтобы открыть ответ.</p>
+
+  <details>
+    <summary>1. Кто ввёл в науку термин «Кыргызское великодержавие»?</summary>
+    <div class="ans">
+      <p>Термин ввёл выдающийся русский и советский востоковед <b>Василий Владимирович Бартольд</b> (1869–1930). Он сформулировал концепцию в работе «Киргизы. Исторический очерк» (1927).</p>
+      <p>Суть идеи: после разгрома Уйгурского каганата в 840 г. енисейские кыргызы стали одной из сильнейших держав Центральной Азии, чьё влияние простиралось далеко за пределы Минусинской котловины.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>2. До каких пределов доходила территория влияния каганата?</summary>
+    <div class="ans">
+      <p>Границы условны: кочевые державы не знали линейных границ, а речь идёт о <i>сфере влияния</i>. В трактовке Бартольда:</p>
+      <p><span class="tag">юг</span> Тянь-Шань и северные подступы к Восточному Туркестану (Турфан, Бешбалык);</p>
+      <p><span class="tag">запад</span> Алтай, Прииртышье, Тарбагатай (контакты с карлуками и кимаками);</p>
+      <p><span class="tag">восток</span> Монголия (Хангай, Орхон, Селенга) и области к Байкалу.</p>
+      <p class="note">Критики (в т. ч. Л. Р. Кызласов, Ю. С. Худяков) считают, что реальное политическое господство за пределами Саяно-Алтая было непрочным и эпизодическим.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>3. С какой китайской династией кыргызы поддерживали обмен в IX в.?</summary>
+    <div class="ans">
+      <p>С <b>династией Тан</b> (618–907). Сведения о кыргызах (в китайских текстах «цзеегусы», «хагас») сохранились в «Синь Тан шу» и «Тан хуйяо». Танский двор признавал кыргызских правителей «родственниками» императорского дома Ли, так как они возводили род к ханьскому полководцу Ли Лину.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>4. Функции и значение посольства Алп Сола в империю Тан. Чего добивалась китайская дипломатия?</summary>
+    <div class="ans">
+      <p><b>Функции посольства:</b> (1) известить двор о разгроме уйгуров и новом положении кыргызов; (2) добиться официального признания власти кагана и его титулов; (3) наладить торговлю и обмен дарами; (4) выступить партнёром против остатков уйгуров.</p>
+      <p><b>Цели Китая:</b> использовать кыргызов как противовес уйгурам и тибетцам; закрепить за собой роль «старшего» в формальной иерархии (дань и «пожалования»); обеспечить безопасность северной границы; получить лошадей. Связь строилась на дипломатии, а не на подчинении: кыргызы сохраняли самостоятельность.</p>
+      <p class="note">Конкретные детали миссии (имя, год, титулы) сверь с лекционным материалом: источники по ним скудны и пересказываются по-разному.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>5. Особенности административно-политического устройства каганата</summary>
+    <div class="ans">
+      <p>Во главе стоял <b>каган</b> (в китайских хрониках — «ажо»), власть которого считалась священной и наследовалась в правящем роду. Государство имело военно-административный характер:</p>
+      <p>• страна делилась на уделы-«бэклики» во главе с наместниками из знати;<br>
+      • титулатура: <i>тегин, чур, бег, тархан, ябгу, эльтебер</i>;<br>
+      • войско организовано по десятичной системе, ополчение формировалось из свободных скотоводов и землепашцев;<br>
+      • хозяйство смешанное: пастбищное скотоводство, поливное земледелие, металлургия.</p>
+      <p>Устройство было децентрализованным: уделы держались на личной верности и военной силе кагана.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>6. Грамотность и сословная структура по руническим памятникам</summary>
+    <div class="ans">
+      <p><b>Грамотность.</b> Енисейские надписи — эпитафии на стелах и скалах, написанные от первого лица («я…»). Они кратки и формульны. Руны встречаются и на бытовых предметах (сосуды, зеркала, украшения), поэтому письменность была шире круга одной знати, но всё же не всеобщей.</p>
+      <p><b>Сословия.</b> На вершине — каган и ближайший род; затем знать и воинская аристократия (беги, тегины, тарханы); основная масса — свободные общинники (<i>будун</i>); внизу — зависимые и рабы (<i>кул, кюн</i>). Надписи прославляют воинские подвиги и верность, то есть отражают прежде всего ценности знати.</p>
+    </div>
+  </details>
+
+  <h2 id="problem" style="margin-top:50px">Проблемный вопрос</h2>
+  <details class="prob" open>
+    <summary>7. В чём исторический парадокс «Кыргызского великодержавия»?</summary>
+    <div class="ans">
+      <p><b>Парадокс:</b> в 840 г. кыргызы разгромили Уйгурский каганат, захватили столицу Орду-Балык и получили контроль над Монголией, но центр остался в Минусинской котловине. «Великая держава» так и не стала «империей» в степи.</p>
+      <p><b>Причины:</b></p>
+      <p>1. <b>Хозяйственная привязка.</b> Ядро основывалось на оседло-кочевой экономике Енисея (земледелие, железо, пастбища). Монгольская степь давала лишь скот.<br>
+      2. <b>Нехватка ресурсов.</b> Малочисленное население не могло одновременно держать тайгу, Саяны и Монголию.<br>
+      3. <b>Отсутствие системы управления.</b> Победа была военным рейдом, а не созданием устойчивой администрации; завоёванное не интегрировалось.<br>
+      4. <b>Внешнее давление.</b> Усиление киданей: в 920-х гг. они вытеснили кыргызов из Монголии, и контроль был потерян.<br>
+      5. <b>Дипломатический расчёт.</b> Тан поддерживал кыргызов лишь как противовес, но не помогал закрепиться.</p>
+      <p><b>Критический вывод:</b> концепция Бартольда верно подчёркивает масштаб победы 840 г., но преувеличивает прочность и размеры «державы». Современные исследователи говорят скорее о <i>краткой гегемонии</i>, чем о длительном господстве.</p>
+    </div>
+  </details>
+</section>
+
+<section id="trade">
+  <h2>Торговые пути и экономические связи Кыргызского каганата, IX–X вв.</h2>
+  <p class="lead">Нажми на маршрут на схеме (она условная, не в масштабе) или на строку таблицы.</p>
+  <div class="map">
+    <svg viewBox="0 0 700 420" width="100%" id="svg" role="img" aria-label="Схема торговых путей"></svg>
+  </div>
+  <div id="info">Выбери маршрут, чтобы увидеть подробности.</div>
+  <div class="tw" style="margin-top:16px">
+    <table>
+      <thead><tr><th>Путь</th><th>Маршрут</th><th>Вывозили</th><th>Ввозили</th><th>Партнёры</th></tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+  <p class="note">Опора: китайские хроники (Синь Тан шу), арабо-персидские авторы X–XI вв. (Худуд аль-алам, Гардизи) и археологические находки в погребениях Хакасии.</p>
+</section>
+
+<section id="test">
+  <h2>Проверь себя</h2>
+  <div id="quiz"></div>
+</section>
+
+<footer>Бишкек 2026 г.</footer>
+
+<script>
+const R=[
+{id:0,n:"Монгольский путь в Китай",c:"#e0603c",p:"330,110 390,200 500,340",m:"Минусинская котловина → Орхон (бывш. уйгурский центр) → Гоби → северные земли Тан",o:"кони, меха, железные изделия",i:"шёлк, ткани, серебро, зеркала, предметы роскоши",w:"династия Тан, уйгурские остатки",d:"Главная дипломатическая и торговая артерия. Китайские зеркала и вещи найдены в погребениях Хакасии. Китай ценил кыргызских коней."},
+{id:1,n:"Западный путь",c:"#d9a441",p:"330,110 190,150 150,300",m:"Минусинск → Алтай → Прииртышье → Семиречье и Средняя Азия",o:"мускус, меха, железо",i:"ткани, серебряные сосуды, украшения",w:"карлуки, кимаки, согдийские и мусульманские купцы",d:"Выход к торговле Средней Азии. Мусульманские авторы X–XI вв. особо отмечают кыргызский мускус."},
+{id:2,n:"Южный путь",c:"#5fb0d9",p:"330,110 270,285",m:"Тува → Западная Монголия → Турфан и Бешбалык (Восточный Туркестан)",o:"кони, меха, ремесленные изделия",i:"ткани, предметы культа, ювелирные изделия",w:"уйгуры Турфана, согдийцы",d:"Подключал кыргызов к Великому шёлковому пути. Мера контроля над оазисами оценивается историками осторожно."},
+{id:3,n:"Северо-восточный путь",c:"#8fcf6a",p:"330,110 520,95",m:"Саяны → Селенга → Байкал",o:"железные изделия, оружие",i:"пушнина (соболь, куница)",w:"курыканы и другие лесные племена",d:"Железо менялось на меха, которые затем уходили на юг и запад. Кыргызы выступали посредником между тайгой и степью."}
+];
+const N=[["Минусинская\nкотловина",330,110,1],["Орхон",390,200],["Китай (Тан)",500,340],["Алтай, Иртыш",190,150],["Семиречье",150,300],["Турфан",270,285],["Байкал",520,95]];
+const svg=document.getElementById("svg"),tb=document.getElementById("tb"),info=document.getElementById("info");
+let h='<rect width="700" height="420" fill="none"/>';
+R.forEach(r=>{h+=`<polyline class="hit" data-r="${r.id}" points="${r.p}"/><polyline class="route" id="rt${r.id}" data-r="${r.id}" points="${r.p}" stroke="${r.c}"/>`});
+N.forEach(n=>{h+=`<circle class="node ${n[3]?'k':''}" cx="${n[1]}" cy="${n[2]}" r="${n[3]?11:7}"/>`;n[0].split("\n").forEach((t,i)=>{h+=`<text x="${n[1]+14}" y="${n[2]+4+i*15}">${t}</text>`})});
+svg.innerHTML=h;
+R.forEach(r=>{tb.innerHTML+=`<tr class="row" id="tr${r.id}" data-r="${r.id}"><td><b style="color:${r.c}">${r.n}</b></td><td>${r.m}</td><td>${r.o}</td><td>${r.i}</td><td>${r.w}</td></tr>`});
+function sel(id){R.forEach(r=>{document.getElementById("rt"+r.id).classList.toggle("on",r.id==id);document.getElementById("tr"+r.id).classList.toggle("on",r.id==id)});const r=R[id];info.innerHTML=`<b style="color:${r.c}">${r.n}</b><br>${r.d}`}
+document.addEventListener("click",e=>{const t=e.target.closest("[data-r]");if(t)sel(+t.dataset.r)});
+
+const Q=[
+{q:"Кто ввёл термин «Кыргызское великодержавие»?",o:["Л. Н. Гумилёв","В. В. Бартольд","А. Н. Бернштам","С. Е. Малов"],a:1,e:"Термин ввёл В. В. Бартольд в работе «Киргизы» (1927)."},
+{q:"В каком году кыргызы разгромили Уйгурский каганат?",o:["745 г.","751 г.","840 г.","920 г."],a:2,e:"В 840 г. кыргызы взяли столицу уйгуров Орду-Балык."},
+{q:"С какой китайской династией кыргызы вели дипломатический обмен в IX в.?",o:["Хан","Тан","Мин","Цин"],a:1,e:"Династия Тан правила в 618–907 гг."},
+{q:"Где находился политический центр Кыргызского каганата?",o:["Орхонская долина","Семиречье","Минусинская котловина","Ферганская долина"],a:2,e:"Центр оставался на Енисее, в Минусинской котловине."},
+{q:"Кто в 920-х гг. вытеснил кыргызов из Монголии?",o:["Тибетцы","Кидани","Карлуки","Монголы Чингисхана"],a:1,e:"Усиливавшиеся кидани лишили кыргызов контроля над Монголией."},
+{q:"Какой товар был одним из известных кыргызских экспортов в X в.?",o:["Мускус","Чай","Фарфор","Хлопок"],a:0,e:"Арабо-персидские авторы особо отмечают кыргызский мускус."},
+{q:"Что собой представляют енисейские рунические памятники?",o:["Торговые договоры","Эпитафии, чаще от первого лица","Летописи ханов","Религиозные гимны"],a:1,e:"Это короткие надгробные надписи, часто начинающиеся словом «я»."},
+{q:"Кому кыргызы поставляли железные изделия в обмен на пушнину?",o:["Согдийцам","Курыканам и лесным племенам","Танскому двору","Карлукам"],a:1,e:"Северо-восточный путь вёл к Байкалу и лесным племенам."},
+{q:"Как называлась основная масса свободного населения в рунических текстах?",o:["Будун","Тегин","Тархан","Каган"],a:0,e:"Будун — народ, свободные общинники."},
+{q:"Какой вывод делают критики концепции Бартольда?",o:["Каганат был мировой империей","Господство было краткой гегемонией","Каганата не существовало","Центр был в Китае"],a:1,e:"Современные исследователи говорят о краткой, непрочной гегемонии."}
+];
+const qz=document.getElementById("quiz");let i=0,sc=0;
+function show(){
+ if(i>=Q.length){const rk=sc>=9?"Каган":sc>=7?"Чур":sc>=5?"Тегин":sc>=3?"Будун":"Кул";
+ qz.innerHTML=`<div class="res"><b>${sc} / ${Q.length}</b><div class="rank">Твой ранг: ${rk}</div><button class="btn" onclick="i=0;sc=0;show()">Пройти ещё раз</button></div>`;return}
+ const q=Q[i];
+ qz.innerHTML=`<div class="qn">Вопрос ${i+1} из ${Q.length}</div><div class="pb"><i style="width:${i/Q.length*100}%"></i></div><h3 style="margin-top:0">${q.q}</h3>`+q.o.map((t,k)=>`<button class="opt" data-k="${k}">${t}</button>`).join("")+`<div id="ex"></div>`;
+ qz.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+  const k=+b.dataset.k;qz.querySelectorAll(".opt").forEach(x=>x.disabled=true);
+  qz.querySelectorAll(".opt")[q.a].classList.add("ok");if(k!==q.a)b.classList.add("bad");else sc++;
+  document.getElementById("ex").innerHTML=`<p class="exp">${q.e}</p><button class="btn" id="nx">${i+1<Q.length?"Далее →":"Результат"}</button>`;
+  document.getElementById("nx").onclick=()=>{i++;show()}})
+}
+show();
+addEventListener("scroll",()=>{const d=document.documentElement;document.getElementById("bar").style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+"%"});
+</script>
+</body>
+</html>
